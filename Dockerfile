@@ -8,4 +8,5 @@ RUN composer install --no-scripts --no-plugins
 COPY track.php /data
 RUN touch /data/.env
 
-CMD ["php", "/data/track.php"]
+ENTRYPOINT ["php", "/data/track.php"]
+CMD ["true"]
