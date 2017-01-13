@@ -7,18 +7,16 @@ use Dotenv\Dotenv;
 
 class Tracker
 {
-
-    const DOTENV_PATH = __DIR__ . '/..';
-
     public static function init()
     {
+        $dotEnvPath = __DIR__ . '/..';
         /*
          * Load environment
          */
-        if ( ! file_exists(self::DOTENV_PATH . '/.env')) {
-            touch(self::DOTENV_PATH . '/.env');
+        if ( ! file_exists($dotEnvPath. '/.env')) {
+            touch($dotEnvPath . '/.env');
         }
-        $dotenv = new Dotenv(self::DOTENV_PATH);
+        $dotenv = new Dotenv($dotEnvPath);
         $dotenv->load();
 
         define('TRACKER_INITIALIZED', true);

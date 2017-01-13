@@ -1,8 +1,21 @@
 #!/usr/bin/env php
 <?php
 
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . /../autoload.php,
+];
+
 if ( ! class_exists('AppDeploymentTracker\Tracker')) {
-    require_once __DIR__ . '/../vendor/autoload.php';
+
+    foreach ($autoloadPaths as $path) {
+        if (file_exists($path)) {
+            require_once $path;
+            break;
+        }
+    }
+
 }
 
 use AppDeploymentTracker\Tracker;
