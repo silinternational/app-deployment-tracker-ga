@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+if ( ! class_exists('AppDeploymentTracker\Tracker')) {
+    require_once __DIR__ . '/../vendor/autoload.php';
+}
+
+use AppDeploymentTracker\Tracker;
+
+Tracker::track();

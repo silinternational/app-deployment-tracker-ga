@@ -1,12 +1,18 @@
 {
-    "name": "silinternational/app-deployment-tracker-ga",
-    "description": "Simple script as Docker image for tracking application deployments with Google Analytics from a CI/CD environment",
-    "type": "library",
-    "require": {
-        "theiconic/php-ga-measurement-protocol": "^2.0",
-        "silinternational/php-env": "^0.2",
-        "vlucas/phpdotenv": "^2.4"
-    },
-    "license": "MIT",
-    "minimum-stability": "stable"
+  "name": "silinternational/app-deployment-tracker-ga",
+  "description": "Simple script as Docker image for tracking application deployments with Google Analytics from a CI/CD environment",
+  "type": "library",
+  "require": {
+    "theiconic/php-ga-measurement-protocol": "^2.0",
+    "silinternational/php-env": "^0.2",
+    "vlucas/phpdotenv": "^2.4"
+  },
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "AppDeploymentTracker\\": "src/"
+    }
+  },
+  "bin": ["bin/track-deployment"]
 }

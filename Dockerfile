@@ -5,8 +5,9 @@ WORKDIR /data
 COPY composer.json /data/composer.json
 RUN composer install --no-scripts --no-plugins
 
-COPY track.php /data
+COPY bin/ /data/bin
+COPY src/ /data/src
 RUN touch /data/.env
 
-ENTRYPOINT ["php", "/data/track.php"]
+ENTRYPOINT ["/data/bin/track-deployment"]
 CMD ["true"]
