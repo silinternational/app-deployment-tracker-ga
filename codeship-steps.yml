@@ -1,0 +1,17 @@
+- name: push_branch
+  service: app
+  type: push
+  image_name: silintl/app-deployment-tracker-ga
+  image_tag: "{{.Branch}}"
+  exclude: master
+  registry: https://index.docker.io/v1/
+  encrypted_dockercfg_path: dockercfg.encrypted
+
+- name: push_latest
+  service: app
+  type: push
+  image_name: silintl/app-deployment-tracker-ga
+  image_tag: "latest"
+  tag: master
+  registry: https://index.docker.io/v1/
+  encrypted_dockercfg_path: dockercfg.encrypted
