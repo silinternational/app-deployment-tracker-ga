@@ -1,4 +1,4 @@
-FROM silintl/php7:7.4
+FROM silintl/php8:8.1
 
 WORKDIR /data
 
