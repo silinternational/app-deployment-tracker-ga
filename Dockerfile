@@ -9,8 +9,5 @@ COPY bin/ /data/bin
 COPY src/ /data/src
 RUN touch /data/.env
 
-# Remove default ssl key
-RUN rm /etc/ssl/private/*
-
 ENTRYPOINT ["/data/bin/track-deployment"]
 CMD ["true"]
